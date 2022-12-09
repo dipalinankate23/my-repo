@@ -1,25 +1,13 @@
 pipeline {
-	agent {
-		node {
-			label "built-in"
-				customWorkspace "/mnt/replica/"
-		}
-	}
-	stages {
-		stage ('install') {
-			steps {
-				sh "yum install git -y"
+    agent any
+    parameters {
+  string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+}
+    stages {
+        stage('Example') {
+            steps {
+                echo "Hello ${params.PERSON}"
 			}
 		}
-		stage ('check') {
-			steps {
-				sh "git --version"
-			}
-		}
-		stage ('file-creat') {
-			steps {
-				sh "echo 'git is back' >> jubli"
-			}
-		}	
 	}	
-}	
+ }
