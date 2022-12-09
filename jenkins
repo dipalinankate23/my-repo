@@ -2,7 +2,7 @@ pipeline {
 	agent {
 		node {
 			label "built-in"
-				customWorkspace '/mnt/hybrid/'
+				customWorkspace '/mnt/basic/'
 		}
 	}
 	stages {
@@ -13,7 +13,7 @@ pipeline {
 		}
 		stage ('create-file') {
 			steps {
-			        sh "cd /mnt/hybrid/India/"
+			        sh "cd /mnt/basic/India/"
 				sh "echo 'hi i am rupesh' >> Manghate"
 				sh "chmod 777 Manghate"
 			}
