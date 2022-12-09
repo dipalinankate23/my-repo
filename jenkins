@@ -14,7 +14,7 @@ pipeline {
 		}
 		stage ('create-file') {
 			steps {
-			        sh "/mnt/hybrid/KIA/Manghate/"
+			        sh "cd /mnt/hybrid/KIA/Manghate/"
 				sh "echo 'hi i am rupesh' >> Manghate"
 				sh "chmod 777 Manghate"
 			}
