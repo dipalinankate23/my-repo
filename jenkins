@@ -8,7 +8,7 @@ pipeline {
 	stages {
 		stage ('create-folder') {
 			steps {
-				sh "mkdir KIA"
+				sh "mkdir India"
 			}
 		}
 		stage ('create-file') {
