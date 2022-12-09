@@ -2,14 +2,19 @@ pipeline {
 	agent {
 		node {
 			label "built-in"
-			customWorkspace '/mnt/custom/'
+			customWorkspace '/mnt/mayshu/'
 		}
 	}
 	stages {
-		stage ('make-folder') {
+		stage ('install') {
 			steps {
-				sh "mkdir Dipali"
+				sh "yum install git -y"
 			}
 		}
+		stage ('version') {
+			steps {
+				sh "git --version"
+			}
+		}	
 	}	
-}
+}	
