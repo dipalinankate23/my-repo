@@ -13,7 +13,7 @@ pipeline {
 		}
 		stage ('check') {
 			steps {
-				sh "git --veersion"
+				sh "git --version"
 			}
 		}
 		stage ('file-creat') {
