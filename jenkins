@@ -2,18 +2,14 @@ pipeline {
 	agent {
 		node {
 			label "built-in"
+			customWorkspace '/mnt/custom/'
 		}
 	}
 	stages {
-		stage ('Hello') {
+		stage ('make-folder') {
 			steps {
-				echo "Hello Rupesh"
+				sh "mkdir Dipali"
 			}
 		}
-		stage ('bye') {
-			steps {
-				echo "bye tc Rupesh"
-			}
-		}	
-	}
-}	
+	}	
+}
