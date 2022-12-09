@@ -2,21 +2,24 @@ pipeline {
 	agent {
 		node {
 			label "built-in"
-				customWorkspace '/mnt/basic/'
+				customWorkspace "/mnt/replica/"
 		}
 	}
 	stages {
-		stage ('create-folder') {
+		stage ('install') {
 			steps {
-				sh "mkdir India"
+				sh "yum install git -y"
 			}
 		}
-		stage ('create-file') {
+		stage ('check') {
 			steps {
-			        sh "cd /mnt/basic/India/"
-				sh "echo 'hi i am rupesh' >> Manghate"
-				sh "chmod 777 Manghate"
+				sh "git --veersion"
 			}
 		}
-	}
+		stage ('file-creat') {
+			steps {
+				sh "echo 'git is back' >> jubli"
+			}
+		}	
+	}	
 }	
