@@ -1,21 +1,23 @@
+
 pipeline {
 	agent {
 		node {
 			label "built-in"
-			customWorkspace "/mnt/pipe/"
-			
+				customWorkspace "/mnt/hybrid/"
 		}
 	}
 	stages {
-		stage ('Hello') {
+		stage ('create-folder') {
 			steps {
-				echo "Hello Dipali"
+				sh "mkdir KIA"
 			}
 		}
-		stage ('rupesh') {
+		stage ('create-file') [
 			steps {
-				echo "bye tc rupu"
+				sh "echo 'hi i am rupesh' >> Manghate"
+				sh "chmod 777 Manghate"
 			}
-		}	
+		}
 	}
 }	
+	
